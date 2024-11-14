@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cool webpage with a background image example.">
+    <title>Coffee Shop</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            background: url('bg1.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+        header {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+            font-size: 3.5em;
+            font-family: 'Unicorn One', fantasy;
+        }
+        nav {
+            margin: 20px 0;
+            text-align: center;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 15px;
+            background: rgba(2, 0, 0, 0.747);
+            border-radius: 5px;
+            margin: 0 5px;
+        }
+        nav a:hover {
+            background: rgba(255, 14, 14, 0.966);
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+        .container h1 {
+            text-align: center;
+        }
+        .menu-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+        }
+        .menu-item h2 {
+            margin: 0;
+            font-size: 1.8em;
+            flex: 1;
+        }
+        .menu-item h3 {
+            margin: 5px 0 0;
+            font-size: 1.2em;
+            font-weight: normal;
+        }
+        .menu-item img {
+            width: 300px;
+            height: 200px;
+            border-radius: 10px;
+        }
+        .order-button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background: #ff4500;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2em;
+        }
+        .order-button:hover {
+            background: #e63946;
+        }
+        .quantity-input {
+            margin-bottom: 10px;
+            padding: 5px;
+            width: 60px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        .total-section {
+            margin-top: 20px;
+            font-size: 1.5em;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 10px;
+            border-radius: 8px;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1><i>Coffee Shop</i></h1>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="videos.html">Videos</a>
+        <a href="about.html">About Us</a>
+    </nav>
+    <div class="container">
+        <h1><u><i>Menu</i></u></h1>
+
+        <!-- Coffee Menu Items -->
+        <div class="menu-item">
+            <div>
+                <h2>Coffee Latte</h2>
+                <h3>₱99.00</h3>
+                <form class="order-form" onsubmit="return validateOrder(99, this)">
+                    <input type="number" class="quantity-input" min="1" value="1" name="quantity">
+                    <button type="submit" class="order-button">Order</button>
+                </form>
+            </div>
+            <img src="latte.jpg" alt="Coffee Latte">
+        </div>
+
+        <div class="menu-item">
+            <div>
+                <h2>Frappuccino</h2>
+                <h3>₱99.00</h3>
+                <form class="order-form" onsubmit="return validateOrder(99, this)">
+                    <input type="number" class="quantity-input" min="1" value="1" name="quantity">
+                    <button type="submit" class="order-button">Order</button>
+                </form>
+            </div>
+            <img src="frap.jpg" alt="Frappuccino">
+        </div>
+
+        <div class="menu-item">
+            <div>
+                <h2>Cappuccino</h2>
+                <h3>₱99.00</h3>
+                <form class="order-form" onsubmit="return validateOrder(99, this)">
+                    <input type="number" class="quantity-input" min="1" value="1" name="quantity">
+                    <button type="submit" class="order-button">Order</button>
+                </form>
+            </div>
+            <img src="Cappuccino.jpg" alt="Cappuccino">
+        </div>
+
+        <div class="menu-item">
+            <div>
+                <h2>Mocha</h2>
+                <h3>₱99.00</h3>
+                <form class="order-form" onsubmit="return validateOrder(99, this)">
+                    <input type="number" class="quantity-input" min="1" value="1" name="quantity">
+                    <button type="submit" class="order-button">Order</button>
+                </form>
+            </div>
+            <img src="Mocha.jpg" alt="Mocha">
+        </div>
+
+        <div class="menu-item">
+            <div>
+                <h2>Caramel Macchiato</h2>
+                <h3>₱99.00</h3>
+                <form class="order-form" onsubmit="return validateOrder(99, this)">
+                    <input type="number" class="quantity-input" min="1" value="1" name="quantity">
+                    <button type="submit" class="order-button">Order</button>
+                </form>
+            </div>
+            <img src="Caramel Macchiato.jpg" alt="Caramel Macchiato">
+        </div>
+
+        <div class="menu-item">
+            <div>
+                <h2>Matcha</h2>
+                <h3>₱99.00</h3>
+                <form class="order-form" onsubmit="return validateOrder(99, this)">
+                    <input type="number" class="quantity-input" min="1" value="1" name="quantity">
+                    <button type="submit" class="order-button">Order</button>
+                </form>
+            </div>
+            <img src="Matcha.jpg" alt="Matcha">
+        </div>
+
+        <div class="menu-item">
+            <div>
+                <h2>Cafe Americano</h2>
+                <h3>₱99.00</h3>
+                <form class="order-form" onsubmit="return validateOrder(99, this)">
+                    <input type="number" class="quantity-input" min="1" value="1" name="quantity">
+                    <button type="submit" class="order-button">Order</button>
+                </form>
+            </div>
+            <img src="cafe americano.jfif" alt="Cafe Americano">
+        </div>
+
+        <div class="menu-item">
+            <div>
+                <h2>Flat White Coffee</h2>
+                <h3>₱99.00</h3>
+                <form class="order-form" onsubmit="return validateOrder(99, this)">
+                    <input type="number" class="quantity-input" min="1" value="1" name="quantity">
+                    <button type="submit" class="order-button">Order</button>
+                </form>
+            </div>
+            <img src="Flat White Coffe.jpg" alt="Flat White Coffee">
+        </div>
+
+        <div class="menu-item">
+            <div>
+                <h2>Cafe Original</h2>
+                <h3>₱99.00</h3>
+                <form class="order-form" onsubmit="return validateOrder(99, this)">
+                    <input type="number" class="quantity-input" min="1" value="1" name="quantity">
+                    <button type="submit" class="order-button">Order</button>
+                </form>
+            </div>
+            <img src="cafe original.jpg" alt="Cafe Original">
+        </div>
+
+        <div class="total-section">
+            <p>Total: ₱<span id="total-amount">0.00</span></p>
+        </div>
+    </div>
+
+    <script>
+        let total = 0;
+
+        function validateOrder(price, form) {
+            const quantity = parseInt(form.quantity.value);
+            if (isNaN(quantity) || quantity <= 0) {
+                alert("Please enter a valid quantity.");
+                return false;
+            }
+            const confirmation = confirm(`Are you sure you want to order ${quantity} item(s) for ₱${price * quantity}?`);
+            if (confirmation) {
+                total += price * quantity;
+                document.getElementById('total-amount').textContent = total.toFixed(2);
+            }
+            return false;
+        }
+    </script>
+</body>
+</html>
