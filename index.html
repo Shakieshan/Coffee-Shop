@@ -58,6 +58,7 @@
             background: rgba(255, 255, 255, 0.1);
             padding: 15px;
             border-radius: 10px;
+            flex-wrap: wrap;
         }
         .menu-item h2 {
             margin: 0;
@@ -70,8 +71,9 @@
             font-weight: normal;
         }
         .menu-item img {
-            width: 300px;
-            height: 200px;
+            width: 100%;
+            max-width: 300px;
+            height: auto;
             border-radius: 10px;
         }
         .order-button {
@@ -103,6 +105,47 @@
             border-radius: 8px;
             color: #fff;
         }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5em;
+            }
+            .menu-item {
+                flex-direction: column;
+                text-align: center;
+            }
+            .menu-item img {
+                max-width: 100%;
+                height: auto;
+                margin-bottom: 10px;
+            }
+            .order-button {
+                font-size: 1em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav {
+                display: flex;
+                flex-direction: column;
+            }
+            nav a {
+                margin: 10px 0;
+            }
+            .container {
+                padding: 15px;
+            }
+            .menu-item h2 {
+                font-size: 1.5em;
+            }
+            .menu-item h3 {
+                font-size: 1em;
+            }
+            .order-button {
+                padding: 8px 15px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -128,103 +171,7 @@
                     <button type="submit" class="order-button">Order</button>
                 </form>
             </div>
-            <img src="Latte.jpg" alt="Coffee Latte">
-        </div>
-
-        <div class="menu-item">
-            <div>
-                <h2>Frappuccino</h2>
-                <h3>₱99.00</h3>
-                <form class="order-form" onsubmit="return validateOrder(99, this)">
-                    <input type="number" class="quantity-input" min="1" value="1" name="quantity">
-                    <button type="submit" class="order-button">Order</button>
-                </form>
-            </div>
-            <img src="frap.jpg" alt="Frappuccino">
-        </div>
-
-        <div class="menu-item">
-            <div>
-                <h2>Cappuccino</h2>
-                <h3>₱99.00</h3>
-                <form class="order-form" onsubmit="return validateOrder(99, this)">
-                    <input type="number" class="quantity-input" min="1" value="1" name="quantity">
-                    <button type="submit" class="order-button">Order</button>
-                </form>
-            </div>
-            <img src="Cappuccino.jpg" alt="Cappuccino">
-        </div>
-
-        <div class="menu-item">
-            <div>
-                <h2>Mocha</h2>
-                <h3>₱99.00</h3>
-                <form class="order-form" onsubmit="return validateOrder(99, this)">
-                    <input type="number" class="quantity-input" min="1" value="1" name="quantity">
-                    <button type="submit" class="order-button">Order</button>
-                </form>
-            </div>
-            <img src="Mocha.jpg" alt="Mocha">
-        </div>
-
-        <div class="menu-item">
-            <div>
-                <h2>Caramel Macchiato</h2>
-                <h3>₱99.00</h3>
-                <form class="order-form" onsubmit="return validateOrder(99, this)">
-                    <input type="number" class="quantity-input" min="1" value="1" name="quantity">
-                    <button type="submit" class="order-button">Order</button>
-                </form>
-            </div>
-            <img src="Caramel Macchiato.jpg" alt="Caramel Macchiato">
-        </div>
-
-        <div class="menu-item">
-            <div>
-                <h2>Matcha</h2>
-                <h3>₱99.00</h3>
-                <form class="order-form" onsubmit="return validateOrder(99, this)">
-                    <input type="number" class="quantity-input" min="1" value="1" name="quantity">
-                    <button type="submit" class="order-button">Order</button>
-                </form>
-            </div>
-            <img src="matcha.jpg" alt="Matcha">
-        </div>
-
-        <div class="menu-item">
-            <div>
-                <h2>Cafe Americano</h2>
-                <h3>₱99.00</h3>
-                <form class="order-form" onsubmit="return validateOrder(99, this)">
-                    <input type="number" class="quantity-input" min="1" value="1" name="quantity">
-                    <button type="submit" class="order-button">Order</button>
-                </form>
-            </div>
-            <img src="cafe americano.jfif" alt="Cafe Americano">
-        </div>
-
-        <div class="menu-item">
-            <div>
-                <h2>Flat White Coffee</h2>
-                <h3>₱99.00</h3>
-                <form class="order-form" onsubmit="return validateOrder(99, this)">
-                    <input type="number" class="quantity-input" min="1" value="1" name="quantity">
-                    <button type="submit" class="order-button">Order</button>
-                </form>
-            </div>
-            <img src="Flat White Coffe.jpg" alt="Flat White Coffee">
-        </div>
-
-        <div class="menu-item">
-            <div>
-                <h2>Cafe Original</h2>
-                <h3>₱99.00</h3>
-                <form class="order-form" onsubmit="return validateOrder(99, this)">
-                    <input type="number" class="quantity-input" min="1" value="1" name="quantity">
-                    <button type="submit" class="order-button">Order</button>
-                </form>
-            </div>
-            <img src="cafe original.jpg" alt="Cafe Original">
+            <img src="latte.jpg" alt="Coffee Latte">
         </div>
 
         <div class="total-section">
