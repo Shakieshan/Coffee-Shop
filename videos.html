@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>COFFEE SHOP</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            background: url('90.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+        header {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+            font-size: 3.5em;
+            font-family: 'Unicorn One', fantasy;
+        }
+        nav {
+            margin: 20px 0;
+            text-align: center;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 15px;
+            background: rgba(2, 0, 0, 0.747);
+            border-radius: 5px;
+            margin: 0 5px;
+        }
+        nav a:hover {
+            background: rgba(255, 14, 14, 0.966);
+        }
+        video {
+            margin: 20px;
+            transition: transform 0.3s ease;
+        }
+        /* Define the animation */
+        .animate {
+            transform: scale(1.1); /* Scale video to 110% */
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+        }
+    </style>
+</head>
+<body align="Center">
+    <header>
+        <h1><i>COFFEE SHOP</i></h1>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="videos.html">Videos</a>
+        <a href="about.html">About us</a>
+    </nav>
+    <table border="1" align="Center">
+        <tr>
+            <td>
+                <video width="600px" height="350" controls onclick="addAnimation(this)">
+                    <source src="Coffee.mp4" type="video/mp4">
+                </video>
+            </td>
+            <td>
+                <video width="600px" height="350" controls onclick="addAnimation(this)">
+                    <source src="Coffee2.mp4" type="video/mp4">
+                </video>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <video width="600px" height="350" controls onclick="addAnimation(this)">
+                    <source src="Coffee3.mp4" type="video/mp4">
+                </video>
+            </td>
+            <td>
+                <video width="570px" height="350" controls onclick="addAnimation(this)">
+                    <source src="Coffee5.mp4" type="video/mp4">
+                </video>
+            </td>
+        </tr>
+    </table>
+    
+    <script>
+        function addAnimation(video) {
+            // Add animation class
+            video.classList.add('animate');
+            // Remove animation class after animation duration (0.3s in this case)
+            setTimeout(() => {
+                video.classList.remove('animate');
+            }, 300);
+        }
+    </script>
+</body>
+</html>
