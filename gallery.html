@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>COFFEE SHOP</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            background: url('cof.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        header {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 3.5em;
+            font-family: 'Unicorn One', fantasy;
+        }
+
+        nav {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 15px;
+            background: rgba(2, 0, 0, 0.747);
+            border-radius: 5px;
+            margin: 0 5px;
+        }
+
+        nav a:hover {
+            background: rgba(255, 14, 14, 0.966);
+        }
+
+        /* Table styling */
+        table {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        /* Image styling */
+        .img-container {
+            position: relative;
+            display: inline-block;
+            overflow: hidden;
+            width: 400px;
+            height: 250px;
+        }
+
+        .img-container img {
+            width: 100%;
+            height: 100%;
+            transition: transform 0.3s ease-in-out; /* Smooth transition for zoom effect */
+        }
+
+        /* Hidden text */
+        .img-text {
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: rgb(255, 255, 255);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            
+            /* Added border, padding, and border-radius for the text */
+            border: 2px solid rgba(49, 26, 5, 0.7); /* Light white border */
+            padding: 5px 10px; /* Space between the text and the border */
+            border-radius: 100px; /* Rounded corners for the border */
+            box-sizing: border-box; /* Ensures padding doesn't affect the layout */
+        }
+
+        /* Hover effect to show text and zoom in the image */
+        .img-container:hover img {
+            transform: scale(1.1); /* Scale image slightly on hover */
+        }
+
+        .img-container:hover .img-text {
+            opacity: 1;
+            transform: translateY(0); /* Slide text up when hovered */
+        }
+
+        /* Animation for images */
+        .animated-img {
+            opacity: 0;
+            transform: scale(0.8);
+            animation: fadeInScale 1s forwards;
+        }
+
+        /* Keyframes for fade-in scale animation */
+        @keyframes fadeInScale {
+            0% {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body align="center">
+    <header>
+        <h1><i>COFFEE SHOP</i></h1>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="Gallery.html">Gallery</a>
+        <a href="Videos.html">Videos</a>
+        <a href="About.html">About us</a>
+    </nav>
+
+    <!-- Image Table with text on hover -->
+    <table border="1" align="center">
+        <tr>
+            <td>
+                <div class="img-container">
+                    <img src="latte1.jpg" class="animated-img" width="400px" height="250px" alt="Latte">
+                    <div class="img-text">Latte</div>
+                </div>
+            </td>
+            <td>
+                <div class="img-container">
+                    <img src="Cappuccino1.jpg" class="animated-img" width="400px" height="250px" alt="Cappuccino">
+                    <div class="img-text">Cappuccino</div>
+                </div>
+            </td>
+            <td>
+                <div class="img-container">
+                    <img src="frapuccino1.jpg" class="animated-img" width="400px" height="250px" alt="Frapuccino">
+                    <div class="img-text">Frapuccino</div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="img-container">
+                    <img src="mocha1.jpg" class="animated-img" width="400px" height="250px" alt="Mocha">
+                    <div class="img-text">Mocha</div>
+                </div>
+            </td>
+            <td>
+                <div class="img-container">
+                    <img src="matcha1.jpg" class="animated-img" width="400px" height="250px" alt="Matcha">
+                    <div class="img-text">Matcha</div>
+                </div>
+            </td>
+            <td>
+                <div class="img-container">
+                    <img src="caramel macchiato1.jpg" class="animated-img" width="400px" height="250px" alt="Caramel Macchiato">
+                    <div class="img-text">Caramel Macchiato</div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="img-container">
+                    <img src="cafe americano1.jpg" class="animated-img" width="400px" height="250px" alt="Cafe Americano">
+                    <div class="img-text">Cafe Americano</div>
+                </div>
+            </td>
+            <td>
+                <div class="img-container">
+                    <img src="flat white coffee1.jpg" class="animated-img" width="400px" height="250px" alt="Flat White Coffee">
+                    <div class="img-text">Flat White Coffee</div>
+                </div>
+            </td>
+            <td>
+                <div class="img-container">
+                    <img src="cafe original1.jpg" class="animated-img" width="400px" height="250px" alt="Cafe Original">
+                    <div class="img-text">Cafe Original</div>
+                </div>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
