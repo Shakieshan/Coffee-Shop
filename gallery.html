@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COFFEE SHOP</title>
     <style>
         body {
@@ -36,65 +38,55 @@
             background: rgba(2, 0, 0, 0.747);
             border-radius: 5px;
             margin: 0 5px;
+            display: inline-block;
         }
 
         nav a:hover {
             background: rgba(255, 14, 14, 0.966);
         }
 
-        /* Table styling */
-        table {
-            width: 80%;
-            margin: 0 auto;
-            border-collapse: collapse;
-        }
-
-        /* Image styling */
+        /* Image container styling */
         .img-container {
             position: relative;
-            display: inline-block;
             overflow: hidden;
             width: 100%;
             height: 250px;
-            max-width: 400px;
-            margin: 10px;
+            margin: 10px auto;
+            max-width: 100%;
         }
 
         .img-container img {
             width: 100%;
             height: 100%;
-            transition: transform 0.3s ease-in-out; /* Smooth transition for zoom effect */
+            object-fit: cover;
+            transition: transform 0.3s ease-in-out;
         }
 
-        /* Hidden text */
         .img-text {
             position: absolute;
             bottom: 10px;
-            left: 0;
-            width: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: auto;
             text-align: center;
-            font-size: 24px;
+            font-size: 1.5em;
             font-weight: bold;
-            color: rgb(255, 255, 255);
+            color: #fff;
             opacity: 0;
-            transform: translateY(20px);
+            padding: 5px 10px;
+            border-radius: 10px;
+            border: 2px solid rgba(49, 26, 5, 0.7);
+            background: rgba(0, 0, 0, 0.6);
             transition: opacity 0.3s ease, transform 0.3s ease;
-            
-            /* Added border, padding, and border-radius for the text */
-            border: 2px solid rgba(49, 26, 5, 0.7); /* Light white border */
-            padding: 5px 10px; /* Space between the text and the border */
-            border-radius: 100px; /* Rounded corners for the border */
-            box-sizing: border-box; /* Ensures padding doesn't affect the layout */
         }
 
-        /* Hover effect to show text and zoom in the image */
         .img-container:hover img {
-            transform: scale(1.1); /* Scale image slightly on hover */
+            transform: scale(1.1);
         }
 
         .img-container:hover .img-text {
             opacity: 1;
-            transform: translateY(0); /* Slide text up when hovered */
+            transform: translate(-50%, 0);
         }
 
         /* Animation for images */
@@ -104,7 +96,6 @@
             animation: fadeInScale 1s forwards;
         }
 
-        /* Keyframes for fade-in scale animation */
         @keyframes fadeInScale {
             0% {
                 opacity: 0;
@@ -116,42 +107,52 @@
             }
         }
 
-        /* Responsive Design */
+        /* Responsive table */
+        .responsive-table {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .responsive-table .img-container {
+            flex: 1 1 300px;
+            margin: 10px;
+        }
+
+        /* Media queries for smaller screens */
         @media (max-width: 768px) {
-            /* Stack images vertically on smaller screens */
-            table {
-                width: 100%;
-            }
-
-            .img-container {
-                width: 100%;
-                max-width: none;
-                height: 200px; /* Adjusted for smaller screens */
-            }
-
             h1 {
                 font-size: 2.5em;
             }
+            
+            nav a {
+                padding: 8px 10px;
+                font-size: 0.9em;
+            }
 
             .img-text {
-                font-size: 18px; /* Smaller text for mobile */
+                font-size: 1.2em;
             }
         }
 
         @media (max-width: 480px) {
-            /* Further adjustments for very small screens */
             h1 {
                 font-size: 2em;
             }
 
+            .img-text {
+                font-size: 1em;
+            }
+
             nav a {
-                padding: 8px 12px;
-                font-size: 14px;
+                padding: 6px 8px;
+                font-size: 0.8em;
             }
         }
     </style>
 </head>
-<body align="center">
+<body>
     <header>
         <h1><i>COFFEE SHOP</i></h1>
     </header>
@@ -162,68 +163,44 @@
         <a href="about.html">About us</a>
     </nav>
 
-    <!-- Image Table with text on hover -->
-    <table border="1" align="center">
-        <tr>
-            <td>
-                <div class="img-container">
-                    <img src="latte1.jpg" class="animated-img" width="400px" height="250px" alt="Latte">
-                    <div class="img-text">Latte</div>
-                </div>
-            </td>
-            <td>
-                <div class="img-container">
-                    <img src="Cappuccino1.jpg" class="animated-img" width="400px" height="250px" alt="Cappuccino">
-                    <div class="img-text">Cappuccino</div>
-                </div>
-            </td>
-            <td>
-                <div class="img-container">
-                    <img src="frapuccino1.jpg" class="animated-img" width="400px" height="250px" alt="Frapuccino">
-                    <div class="img-text">Frapuccino</div>
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <div class="img-container">
-                    <img src="mocha1.jpg" class="animated-img" width="400px" height="250px" alt="Mocha">
-                    <div class="img-text">Mocha</div>
-                </div>
-            </td>
-            <td>
-                <div class="img-container">
-                    <img src="Matcha1.jpg" class="animated-img" width="400px" height="250px" alt="Matcha">
-                    <div class="img-text">Matcha</div>
-                </div>
-            </td>
-            <td>
-                <div class="img-container">
-                    <img src="caramel macchiato1.jpg" class="animated-img" width="400px" height="250px" alt="Caramel Macchiato">
-                    <div class="img-text">Caramel Macchiato</div>
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <div class="img-container">
-                    <img src="cafe americano1.jpg" class="animated-img" width="400px" height="250px" alt="Cafe Americano">
-                    <div class="img-text">Cafe Americano</div>
-                </div>
-            </td>
-            <td>
-                <div class="img-container">
-                    <img src="flat white coffee1.jpg" class="animated-img" width="400px" height="250px" alt="Flat White Coffee">
-                    <div class="img-text">Flat White Coffee</div>
-                </div>
-            </td>
-            <td>
-                <div class="img-container">
-                    <img src="cafe original1.jpg" class="animated-img" width="400px" height="250px" alt="Cafe Original">
-                    <div class="img-text">Cafe Original</div>
-                </div>
-            </td>
-        </tr>
-    </table>
+    <!-- Responsive Image Grid -->
+    <div class="responsive-table">
+        <div class="img-container">
+            <img src="latte1.jpg" class="animated-img" alt="Latte">
+            <div class="img-text">Latte</div>
+        </div>
+        <div class="img-container">
+            <img src="Cappuccino1.jpg" class="animated-img" alt="Cappuccino">
+            <div class="img-text">Cappuccino</div>
+        </div>
+        <div class="img-container">
+            <img src="frapuccino1.jpg" class="animated-img" alt="Frapuccino">
+            <div class="img-text">Frapuccino</div>
+        </div>
+        <div class="img-container">
+            <img src="mocha1.jpg" class="animated-img" alt="Mocha">
+            <div class="img-text">Mocha</div>
+        </div>
+        <div class="img-container">
+            <img src="Matcha1.jpg" class="animated-img" alt="Matcha">
+            <div class="img-text">Matcha</div>
+        </div>
+        <div class="img-container">
+            <img src="caramel macchiato1.jpg" class="animated-img" alt="Caramel Macchiato">
+            <div class="img-text">Caramel Macchiato</div>
+        </div>
+        <div class="img-container">
+            <img src="cafe americano1.jpg" class="animated-img" alt="Cafe Americano">
+            <div class="img-text">Cafe Americano</div>
+        </div>
+        <div class="img-container">
+            <img src="flat white coffee1.jpg" class="animated-img" alt="Flat White Coffee">
+            <div class="img-text">Flat White Coffee</div>
+        </div>
+        <div class="img-container">
+            <img src="cafe original1.jpg" class="animated-img" alt="Cafe Original">
+            <div class="img-text">Cafe Original</div>
+        </div>
+    </div>
 </body>
 </html>
