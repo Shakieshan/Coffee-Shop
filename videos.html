@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>COFFEE SHOP</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
             margin: 0;
@@ -10,21 +12,29 @@
             color: #fff;
             background: url('90.jpg') no-repeat center center fixed;
             background-size: cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
+
         header {
             background: rgba(0, 0, 0, 0.6);
             padding: 20px;
             text-align: center;
+            width: 100%;
         }
+
         h1 {
             margin: 0;
-            font-size: 3.5em;
+            font-size: 3em;
             font-family: 'Unicorn One', fantasy;
         }
+
         nav {
             margin: 20px 0;
             text-align: center;
         }
+
         nav a {
             color: #fff;
             text-decoration: none;
@@ -33,62 +43,100 @@
             border-radius: 5px;
             margin: 0 5px;
         }
+
         nav a:hover {
             background: rgba(255, 14, 14, 0.966);
         }
-        video {
-            margin: 20px;
-            transition: transform 0.3s ease;
+
+        /* Flexbox container for videos */
+        .video-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+            width: 100%;
+            max-width: 1200px;
         }
+
+        .video-container {
+            flex: 1 1 45%; /* Each video takes 45% width, adjusts for screen size */
+            max-width: 600px;
+        }
+
+        video {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
         /* Define the animation */
         .animate {
-            transform: scale(1.1); /* Scale video to 110% */
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+            transform: scale(1.05); /* Scale video slightly */
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5em;
+            }
+            .video-container {
+                flex: 1 1 100%; /* Videos take full width on tablets */
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav a {
+                display: block;
+                margin: 10px 0;
+            }
+            h1 {
+                font-size: 2em;
+            }
         }
     </style>
 </head>
-<body align="Center">
+<body>
     <header>
         <h1><i>COFFEE SHOP</i></h1>
     </header>
+    
     <nav>
         <a href="index.html">Home</a>
         <a href="gallery.html">Gallery</a>
         <a href="videos.html">Videos</a>
-        <a href="about.html">About us</a>
+        <a href="about.html">About Us</a>
     </nav>
-    <table border="1" align="Center">
-        <tr>
-            <td>
-                <video width="600px" height="350" controls onclick="addAnimation(this)">
-                    <source src="Coffee.mp4" type="video/mp4">
-                </video>
-            </td>
-            <td>
-                <video width="600px" height="350" controls onclick="addAnimation(this)">
-                    <source src="Coffee2.mp4" type="video/mp4">
-                </video>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <video width="600px" height="350" controls onclick="addAnimation(this)">
-                    <source src="Coffee3.mp4" type="video/mp4">
-                </video>
-            </td>
-            <td>
-                <video width="570px" height="350" controls onclick="addAnimation(this)">
-                    <source src="Coffee5.mp4" type="video/mp4">
-                </video>
-            </td>
-        </tr>
-    </table>
+
+    <!-- Responsive Video Gallery -->
+    <div class="video-gallery">
+        <div class="video-container">
+            <video controls onclick="addAnimation(this)">
+                <source src="Coffee.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="video-container">
+            <video controls onclick="addAnimation(this)">
+                <source src="Coffee2.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="video-container">
+            <video controls onclick="addAnimation(this)">
+                <source src="Coffee3.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="video-container">
+            <video controls onclick="addAnimation(this)">
+                <source src="Coffee5.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
     
     <script>
         function addAnimation(video) {
-            // Add animation class
             video.classList.add('animate');
-            // Remove animation class after animation duration (0.3s in this case)
             setTimeout(() => {
                 video.classList.remove('animate');
             }, 300);
